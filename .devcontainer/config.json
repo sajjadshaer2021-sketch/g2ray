@@ -1,8 +1,20 @@
 {
+  "policy": {
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true
+    },
+    "levels": {
+      "0": {
+        "connIdle": 0          // 0 means never close idle connections
+      }
+    }
+  },
   "inbounds": [
     {
       "port": 443,
       "protocol": "vless",
+      "policy": "0",           // apply the ‘no idle timeout’ policy
       "settings": {
         "clients": [
           {
